@@ -1,0 +1,63 @@
+@import '../../global.scss';
+
+.join-us {
+  // @include container;
+  max-width: 1300px;
+  margin: 8rem auto;
+  background-image: url('/join-bg.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  overflow: hidden;
+  @include mobile {
+    margin: 5rem auto;
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    @include tablet {
+      flex-direction: column;
+    }
+    @include mobile {
+      padding: 2rem 1rem;
+    }
+    .left {
+      span {
+        @include font-oswald;
+        font-size: 3rem;
+        @include mobile {
+          font-size: 2rem;
+        }
+      }
+      p {
+        @include font-oswald;
+        font-size: 1.4rem;
+        font-weight: 200;
+        color: $gray;
+        @include mobile {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .right {
+      .contact-btn {
+        border: 1px solid gray;
+        padding: 12px 30px;
+        cursor: pointer;
+        @include flex();
+        gap: 20px;
+        transition: 0.5s;
+        @include mobile {
+          margin-top: 2rem;
+        }
+        &:hover {
+          background-color: #fff;
+          color: #303030;
+        }
+      }
+    }
+  }
+}

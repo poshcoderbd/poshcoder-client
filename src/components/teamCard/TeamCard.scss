@@ -1,0 +1,54 @@
+@import '../../global.scss';
+
+.team-card {
+  position: relative;
+  width: 300px;
+  height: 370px;
+  // border: 1px solid rgba(128, 128, 128, 0.404);
+  cursor: pointer;
+  overflow: hidden;
+  // @include mobile {
+  //   width: 120px;
+  //   height: 180px;
+  // }
+  .team-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      transition: 1s ease;
+      &:hover {
+        filter: grayscale(1);
+        transform: scale(1.1);
+      }
+    }
+  }
+  .card-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $deep-gray;
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    transition: 1s ease;
+    // @include mobile {
+    //   padding: 0.3rem 0.4rem;
+    // }
+    span {
+      font-size: 15px;
+      color: $gray;
+      // @include mobile {
+      //   font-size: 12px;
+        
+      // }
+    }
+    .card-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      // @include mobile {
+      //   font-size: 0.9rem;
+      // }
+    }
+  }
+}

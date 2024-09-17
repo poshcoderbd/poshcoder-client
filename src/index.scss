@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import './global.scss';
+:root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  //firefox
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: $body-bg;
+  // background-color: #0C0C21;
+  color: #ffffff;
+}
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+img {
+  width: 100%;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.MuiDataGrid-cell:focus,
+.MuiDataGrid-cell:focus-within {
+  outline: none !important;
+}

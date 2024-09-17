@@ -1,0 +1,34 @@
+@import '../../global.scss';
+
+.trustedby {
+  @include container;
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+    opacity: 0.6;
+    margin-bottom: 6rem;
+    @include font-oswald;
+    span {
+      -webkit-text-stroke: 1px $gray;
+      color: transparent;
+    }
+    @include mobile {
+      font-size: 3rem;
+      margin-bottom: 5rem;
+    }
+  }
+  h3 {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid $dark-gray;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    opacity: 0.6;
+  }
+  img {
+    width: 250px;
+    @include mobile {
+      width: 150px;
+    }
+  }
+}

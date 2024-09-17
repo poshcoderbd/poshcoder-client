@@ -1,0 +1,119 @@
+@import '../../global.scss';
+
+.service {
+  @include container;
+  padding: 5rem 1rem;
+  @include mobile {
+    padding: 5rem 1rem;
+  }
+  .top {
+    .our-service {
+      font-size: 6rem;
+      @include font-oswald;
+      -webkit-text-stroke: 1px $gray;
+      font-weight: bold;
+      color: transparent;
+      opacity: 0.6;
+      margin-bottom: 2rem;
+      @include mobile {
+        font-size: 3rem;
+      }
+    }
+  }
+  .bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 40px;
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background-color: $deep-gray;
+      // border: 1px solid $dark-gray;
+      border-radius: 10px;
+      min-width: 300px;
+      min-height: 250px;
+      padding: 1rem 2rem;
+      color: #fff;
+      position: relative;
+      transition: .5s;
+      &:hover {
+        .card-bottom{
+          .details-btn{
+           padding: 5px 50px;
+          }
+        }
+      }
+      .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 3rem;
+        margin-bottom: .5rem;
+        svg {
+          font-size: 3.5rem;
+          opacity: .7;
+        }
+        span {
+          font-size: 3.5rem;
+          font-weight: bold;
+          -webkit-text-stroke: 0.5px $gray;
+          color: transparent;
+          // @include font-bebas-neue;
+        }
+      }
+      .card-bottom {
+        text-align: center;
+        .card-title {
+          @include font-oswald;
+          font-size: 2rem;
+          font-weight: 500;
+          line-height: 35px;
+          opacity: .9;
+        }
+        p {
+          font-size: 19px;
+          @include font-ysabeau;
+          font-weight: 300;
+          opacity: .7;
+        }
+        .details-btn{
+          border: 1px solid rgb(90, 90, 90);
+          padding: 5px 10px;
+          font-size: 14px;
+          font-weight: 300;
+          transition: .5s;
+          
+          &:hover{
+            background-color: #fff;
+            color: black;
+          }
+        }
+      }
+    }
+    .read-more{
+      align-self: flex-end;
+      border: 1px solid gray;
+      width: 210px;
+      @include flex();
+      gap: 20px;
+      padding: 5px 0;
+      color: #fff;
+      cursor: pointer;
+      transition: .5s;
+      &:hover{
+        background-color: #fff;
+        color: black;
+      }
+      svg{
+        font-size: 2rem;
+        opacity: .7;
+      }
+    }
+  }
+}

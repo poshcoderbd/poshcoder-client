@@ -1,0 +1,22 @@
+@import '../../global.scss';
+
+.some-blog {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  .h1 {
+    font-size: 4rem;
+    text-align: center;
+    opacity: 0.6;
+    margin-bottom: 6rem;
+    @include font-oswald;
+    span {
+      -webkit-text-stroke: 1px $gray;
+      color: transparent;
+    }
+    @include mobile {
+      font-size: 3rem;
+      margin-bottom: 5rem;
+    }
+  }
+}

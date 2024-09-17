@@ -1,0 +1,8 @@
+@import '../../global.scss';
+
+.blog-single {
+  @include container;
+  margin: 0 auto;
+  padding: 0 1rem;
+  margin-top: 5rem;
+}

@@ -1,0 +1,122 @@
+@import '../../global.scss';
+
+.footer {
+  background-image: url('/footer-bg-1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 10rem;
+  padding-bottom: 5rem;
+  @include mobile {
+    margin-top: 5rem;
+  }
+  &-container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid $dark-gray;
+      padding: 5rem 0;
+      @include tablet {
+        flex-direction: column; 
+        padding: 1rem 0;
+        align-items: flex-start;
+      }
+      .logo {
+        opacity: .8;
+        img{
+          @include mobile {
+            width: 100%;
+          }
+        }
+        @include mobile {
+        margin-bottom: 2rem;
+        }
+      }
+      .icons {
+        @include tablet{
+          margin-top: 1rem;
+        }
+        svg{
+          background-color: black;
+          border: 1px solid $dark-gray;
+          padding: 15px;
+          margin-right: 1rem;
+          border-radius: 50%;
+          cursor: pointer;
+          @include mobile {
+            padding: 10px;
+          }
+        }
+      }
+    }
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 100px;
+      margin-top: 5rem;
+      margin-bottom: 3rem;
+      @include tablet {
+        flex-direction: column;
+        gap: 50px;
+      }
+      @include mobile {
+        margin-top: 3rem;
+        align-items: flex-start
+      }
+      .left {
+        h4{
+          @include font-oswald;
+          font-weight: 200;
+          font-size: 1.5rem;
+          opacity: .6;
+        }
+        h1{
+          font-size: 3.5rem;
+          @include font-oswald;
+          opacity: .8;
+          @include mobile {
+            font-size: 2rem;
+          }
+        }
+      }
+      .right {
+        display: flex;
+        gap: 100px;
+        @include mobile {
+        flex-direction: column;
+        gap: 50px;
+        }
+        .right1 {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .f-link{
+            color: $gray;
+          }
+        }
+        .right2 {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          span{
+            color: $gray;
+          }
+        }
+      }
+    }
+    .copyright{
+      align-self: center;
+      font-weight: 200;
+      width: 100%;
+      margin-top: 5rem;
+      text-align: center;
+      @include mobile{
+        margin-top: 2rem;
+      }
+    }
+  }
+}

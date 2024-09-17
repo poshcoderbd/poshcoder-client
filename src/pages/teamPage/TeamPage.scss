@@ -1,0 +1,44 @@
+@import '../../global.scss';
+
+.teams {
+  .top {
+    display: flex;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/agency-about.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(1);
+    background-size: cover;
+    position: relative;
+    @include mobile{
+    height: 200px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #00000000, $body-bg);
+    }
+    .top-title {
+      font-size: 4rem;
+      color: #fff;
+      font-weight: bold;
+      z-index: 1;
+      @include mobile{
+        font-size: 3rem;
+        text-align: center
+      }
+    }
+  }
+  .middle {
+    @include container;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    margin-top: 10rem;
+  }
+}

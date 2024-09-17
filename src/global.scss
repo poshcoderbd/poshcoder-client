@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Ysabeau:wght@1;100;200;300;400;500;600;700&display=swap');
+
+$black: #262626;
+$deep-gray: #17181a;
+$dark-gray: rgb(56, 56, 56);
+$gray: rgb(199, 199, 199);
+$red: #df2818;
+$body-bg: #020b0d;
+
+$mbl-w: 600px;
+$tab-w: 1100px;
+
+@mixin font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+@mixin font-bebas-neue {
+  font-family: 'Bebas Neue', sans-serif;
+}
+@mixin font-ysabeau {
+  font-family: 'Ysabeau', sans-serif;
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mbl-w) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: $tab-w) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// @mixin shadow {
+//   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+// };
+@mixin shadow {
+  box-shadow: 0 0 1px hsl(0deg 0% 0% / 0.075), 0 0 2px hsl(0deg 0% 0% / 0.075),
+    0 0 4px hsl(0deg 0% 0% / 0.075), 0 0 8px hsl(0deg 0% 0% / 0.075),
+    0 0 16px hsl(0deg 0% 0% / 0.075);
+}
+
+@mixin shadow-high {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@mixin flex($alignItem: center, $justifyContent: center) {
+  display: flex;
+  align-items: $alignItem;
+  justify-content: $justifyContent;
+}
