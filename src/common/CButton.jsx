@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button, CircularProgress } from '@mui/material';
 
-const CButton = ({ variant, onClick, children, isLoading, style, props }) => {
+const CButton = ({ type, variant, onClick, children, isLoading, style, props }) => {
   return (
     <Button
       {...props}
+      type={type}
       variant={variant}
       onClick={onClick}
       disabled={isLoading}

@@ -1,12 +1,26 @@
 import './Contact.scss';
+import React, { useEffect } from 'react';
 import PsychologyAltIcon from '@mui/icons-material/PsychologyAlt';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { useForm } from '@formspree/react';
+import { useUserInfo } from '../../hook/useUserInfo';
+import CButton from '../../common/CButton';
 
 const Contact = () => {
+  const { userInfo } = useUserInfo()
+  const [state, handleSubmit] = useForm("meojwyor");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [state.success]);
+
+  if (state.succeeded) {
+    return <h2 style={{ color: 'green', padding: '5rem' }}>Thanks for submit! We will contact you soon.</h2>;
+  }
   return (
     <div className="contact">
-            <div className="top">
+      <div className="top">
         <span className='top-title'>CONTACT US</span>
       </div>
       <div className="middle">
@@ -38,23 +52,23 @@ const Contact = () => {
           </div>
         </div>
         <div className="right">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form1">
-              <input type="text" placeholder='Name' />
-              <input type="text" placeholder='Email' />
+              <input required name='name' type="text" placeholder='Name' />
+              <input value={userInfo?.email ?? ''} required readOnly={userInfo} name='email' type="email" placeholder='Email' />
             </div>
             <div className="form2">
-              <input type="text" placeholder='Phone' />
-              <input type="text" placeholder='Subject' />
+              <input required name='phone' type="number" placeholder='Phone' />
+              <input required name='subject' type="text" placeholder='Subject' />
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder='Message'></textarea>
-            <button>SEND NOW</button>
+            <textarea name="message" id="" cols="30" rows="10" placeholder='Message'></textarea>
+            <CButton isLoading={state.submitting} type='submit'>SEND NOW</CButton>
           </form>
         </div>
       </div>
       <div className="bottom">
-      {/* width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" */}
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14599.600557707927!2d90.4335647!3d23.8221498!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c72228136e5d%3A0x6dcc2b981cd155e7!2sPosh%20Coder!5e0!3m2!1sen!2sbd!4v1711269110217!5m2!1sen!2sbd"></iframe>
+        {/* width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" */}
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14599.600557707927!2d90.4335647!3d23.8221498!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c72228136e5d%3A0x6dcc2b981cd155e7!2sPosh%20Coder!5e0!3m2!1sen!2sbd!4v1711269110217!5m2!1sen!2sbd"></iframe>
       </div>
     </div>
   )

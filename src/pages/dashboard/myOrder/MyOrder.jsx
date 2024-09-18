@@ -178,7 +178,7 @@ const MyOrder = () => {
               }} onClick={() => handleEdit(params.row)}>
               <EditOutlined fontSize='small' />
             </IconButton>
-            <IconButton
+            {/* <IconButton
               disabled={params.row.status !== 'placed'}
               sx={{
                 bgcolor: 'light.main',
@@ -187,7 +187,7 @@ const MyOrder = () => {
                 height: { xs: '30px', md: '40px' },
               }} onClick={() => handleDeleteDialog(params.row)}>
               <DeleteOutline fontSize='small' />
-            </IconButton>
+            </IconButton> */}
           </Stack>
         )
       },

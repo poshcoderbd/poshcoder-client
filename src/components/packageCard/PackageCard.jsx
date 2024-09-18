@@ -24,7 +24,8 @@ const PackageCard = ({ data, dashboard }) => {
     }} justifyContent='space-between' >
       <Box>
         <Typography variant='h4' sx={{ fontSize: '30px', mb: 1.5 }}>{data.name}</Typography>
-        <Typography variant='h5' sx={{ fontWeight: 300, color: 'red', mb: 1.5 }}>{data.price}</Typography>
+        <Typography variant='h5' sx={{ fontWeight: 300, color: 'red', }}>{data.price}</Typography>
+        <Typography sx={{ fontWeight: 300, color: 'coral' }} mb={2}>(negotiable)</Typography>
         <Box>
           {
             data?.details?.map((d, i) => (

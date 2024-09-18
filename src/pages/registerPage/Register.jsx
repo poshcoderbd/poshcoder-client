@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
-import { Box, Button, Stack, TextField, Typography } from '@mui/material'
-import { Link, useNavigate } from 'react-router-dom'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { axiosReq } from '../../utils/axiosReq'
-import toast from 'react-hot-toast'
-import CButton from '../../common/CButton'
+import React, { useState } from 'react';
+import { Box, Button, Stack, TextField, Typography, IconButton, InputAdornment } from '@mui/material';
+import { Link, useNavigate } from 'react-router-dom';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { axiosReq } from '../../utils/axiosReq';
+import toast from 'react-hot-toast';
+import CButton from '../../common/CButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 const style = {
   main: {
@@ -27,17 +29,22 @@ const style = {
     borderRadius: '5px'
   },
   input: {
-    padding: '10px',
+    // padding: '10px',
     width: '250px',
     backgroundColor: 'transparent',
     border: '.5px solid gray',
     borderRadius: '5px',
-    color: 'white'
+    color: 'white',
+    '&::placeholder': {
+      color: '#fff'
+    }
   }
 }
 
 const Register = () => {
-  const [verificationMailSendMsg, setVerificationMailSendMsg] = useState('')
+  const [verificationMailSendMsg, setVerificationMailSendMsg] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRePassword, setShowRePassword] = useState(false);
   const [payload, setPayload] = useState({
     username: '',
     email: '',
@@ -46,16 +53,14 @@ const Register = () => {
     rePassword: ''
   });
 
-  const navigate = useNavigate()
-
   const queryClient = useQueryClient();
 
   const regMutation = useMutation({
     mutationFn: (input) => axiosReq.post('/auth/register', input),
     onSuccess: (res) => {
-      setPayload({})
+      setPayload({});
       queryClient.invalidateQueries(['register']);
-      setVerificationMailSendMsg(res.data)
+      setVerificationMailSendMsg(res.data);
       toast.success(res.data);
       setPayload({
         username: '',
@@ -63,9 +68,8 @@ const Register = () => {
         phone: '',
         password: '',
         rePassword: ''
-      })
+      });
       // navigate('/login')
-
     },
     onError: (err) => {
       const errorMsg = err.response && err.response.data ? err.response.data : 'Registration failed';
@@ -109,16 +113,57 @@ const Register = () => {
       password: payload.password
     });
   };
+
   return (
     <>
       <Box sx={style.main}>
         <Stack sx={style.inputContainer} justifyContent={'center'} alignContent={'center'} gap={2}>
           <Typography variant='h4'>Register</Typography>
-          <input value={payload.username} onChange={inputChange} name='username' style={style.input} placeholder='User Name' />
-          <input value={payload.email} onChange={inputChange} name='email' style={style.input} placeholder='Email' />
-          <input value={payload.phone} onChange={inputChange} name='phone' type='number' style={style.input} placeholder='Phone' />
-          <input value={payload.password} onChange={inputChange} name='password' style={style.input} placeholder='Password' />
-          <input value={payload.rePassword} onChange={inputChange} name='rePassword' style={style.input} placeholder='Repeat Password' />
+          <TextField size='small' value={payload.username} onChange={inputChange} name='username' InputProps={{ style: style.input }} placeholder='User Name' />
+          <TextField size='small' value={payload.email} onChange={inputChange} name='email' InputProps={{ style: style.input }} placeholder='Email' />
+          <TextField size='small' value={payload.phone} onChange={inputChange} name='phone' type='number' InputProps={{ style: style.input }} placeholder='Phone' />
+          <TextField
+            type={showPassword ? 'text' : 'password'}
+            value={payload.password}
+            onChange={inputChange}
+            name='password'
+            size='small'
+            placeholder='Password'
+            InputProps={{
+              style: style.input,
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={() => setShowPassword(!showPassword)}
+                    edge="end"
+                  >
+                    {showPassword ? <VisibilityOff color='primary' /> : <Visibility color='primary' />}
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+          />
+          <TextField
+            type={showRePassword ? 'text' : 'password'}
+            value={payload.rePassword}
+            onChange={inputChange}
+            name='rePassword'
+            size='small'
+            placeholder='Repeat Password'
+            InputProps={{
+              style: style.input,
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={() => setShowRePassword(!showRePassword)}
+                    edge="end"
+                  >
+                    {showRePassword ? <VisibilityOff color='primary' /> : <Visibility color='primary' />}
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+          />
           <CButton isLoading={regMutation.isPending} onClick={handleRegister} variant='contained'>Register</CButton>
           {
             verificationMailSendMsg &&
@@ -131,4 +176,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export default Register;
