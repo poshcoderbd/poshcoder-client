@@ -1,19 +1,28 @@
-import { Fade, Slide, Zoom } from 'react-awesome-reveal';
+import React from "react";
 
-export const SlideAnimation = ({children,direction,cascade, duration}) => {
-  return (
-    <Slide direction={direction} cascade={cascade} triggerOnce duration={duration}>{children}</Slide>
-  )
-}
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
-export const FadeAnimation = ({children,damping,delay,cascade}) => {
+export const SlideAnimation = ({ children, direction, cascade, duration }) => {
   return (
-    <Fade triggerOnce damping={damping} cascade={cascade} delay={delay}>{children}</Fade>
-  )
-}
+    <Slide
+      direction={direction}
+      cascade={cascade}
+      triggerOnce
+      duration={duration}
+    >
+      {children}
+    </Slide>
+  );
+};
 
-export const ZoomAnimation = ({children}) => {
+export const FadeAnimation = ({ children, damping, delay, cascade }) => {
   return (
-    <Zoom triggerOnce>{children}</Zoom>
-  )
-}
+    <Fade triggerOnce damping={damping} cascade={cascade} delay={delay}>
+      {children}
+    </Fade>
+  );
+};
+
+export const ZoomAnimation = ({ children }) => {
+  return <Zoom triggerOnce>{children}</Zoom>;
+};

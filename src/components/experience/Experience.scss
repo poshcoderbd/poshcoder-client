@@ -1,4 +1,4 @@
-@import '../../global.scss';
+@import "../../global.scss";
 
 .experience {
   display: flex;
@@ -15,9 +15,9 @@
     height: 600px;
     background-color: $deep-gray;
     position: relative;
-    &::before{
+    &::before {
       position: absolute;
-      content: '';
+      content: "";
       width: 90%;
       height: 90%;
       border: 1px solid $dark-gray;
@@ -36,7 +36,6 @@
       @include mobile {
         margin: 1rem;
         padding: 2rem 1rem;
-
       }
       .h4 {
         @include font-oswald;
@@ -69,12 +68,12 @@
           gap: 20px;
           @include font-oswald;
           font-size: 1.1rem;
-          svg{
+          svg {
             font-size: 2rem;
           }
         }
       }
-      .read-more{
+      .read-more {
         border: 1px solid $gray;
         width: 170px;
         @include flex();
@@ -83,12 +82,12 @@
         margin-top: 2rem;
         color: #fff;
         cursor: pointer;
-        transition: .5s;
-        &:hover{
+        transition: 0.5s;
+        &:hover {
           background-color: #fff;
           color: black;
         }
-        svg{
+        svg {
           font-size: 2rem;
         }
         font-weight: bold;
@@ -102,6 +101,7 @@
     img {
       height: 100%;
       object-fit: cover;
+      max-width: 100%;
     }
   }
 }

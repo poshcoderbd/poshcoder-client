@@ -1,11 +1,13 @@
-/* eslint-disable react/prop-types */
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import React from 'react';
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import React from "react";
 
-
-export default function CDialog({ openDialog, closeDialog, children, maxWidth }) {
-
+export default function CDialog({
+  openDialog,
+  closeDialog,
+  children,
+  maxWidth,
+}) {
   return (
     <Dialog
       maxWidth={maxWidth}
@@ -13,9 +15,7 @@ export default function CDialog({ openDialog, closeDialog, children, maxWidth })
       onClose={closeDialog}
       open={openDialog}
     >
-      <DialogContent>
-        {children}
-      </DialogContent>
+      <DialogContent>{children}</DialogContent>
     </Dialog>
   );
 }

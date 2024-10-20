@@ -1,36 +1,42 @@
-import React from 'react'
-import './BlogPage.scss'
-import BlogCard from '../../components/blogCard/BlogCard'
-import { Container, Stack } from '@mui/material'
-import { useQuery } from '@tanstack/react-query';
-import { axiosReq } from '../../utils/axiosReq';
-import LoadingBar from '../../components/loadingBar/LoadingBar';
-import Loading from '../../components/loading/Loading';
-
+import { Container, Stack } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
+import BlogCard from "../../components/blogCard/BlogCard";
+import Loading from "../../components/loading/Loading";
+import LoadingBar from "../../components/loadingBar/LoadingBar";
+import { axiosReq } from "../../utils/axiosReq";
+import "./BlogPage.scss";
 
 const BlogPage = () => {
-  const { isLoading, error, data: allBlog } = useQuery({
-    queryKey: ['blog'],
-    queryFn: () => axiosReq.get('/blog/getAll').then(res => res.data)
+  const {
+    isLoading,
+    error,
+    data: allBlog,
+  } = useQuery({
+    queryKey: ["blog"],
+    queryFn: () => axiosReq.get("/blog/getAll").then((res) => res.data),
   });
 
   return (
     <div className="blog">
       <div className="top">
-        <span className='top-title'>OUR BLOG</span>
+        <h1 className="top-title">OUR BLOG</h1>
       </div>
       <Container>
         <Stack gap={6} className="middle">
-          {
-            isLoading ? <><LoadingBar /> <Loading /></> : error ? 'Something went wrong!' :
-              allBlog.map(item => (
-                <BlogCard key={item._id} data={item} />
-              ))
-          }
+          {isLoading ? (
+            <>
+              <LoadingBar /> <Loading />
+            </>
+          ) : error ? (
+            "Something went wrong!"
+          ) : (
+            allBlog.map((item) => <BlogCard key={item._id} data={item} />)
+          )}
         </Stack>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default BlogPage
+export default BlogPage;

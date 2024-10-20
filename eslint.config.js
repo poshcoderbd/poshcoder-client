@@ -1,12 +1,18 @@
-import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
-
+import globals from "globals";
 
 export default [
-  {files: ["**/*.{js,mjs,cjs,jsx}"]},
+  { files: ["**/*.{js,mjs,cjs,jsx}"] },
   { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
-  {languageOptions: { globals: globals.browser }},
+  { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   pluginReactConfig,
+  {
+    rules: {
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": "off",
+    },
+  },
 ];

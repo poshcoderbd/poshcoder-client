@@ -1,16 +1,26 @@
-/* eslint-disable react/prop-types */
-import React from 'react'
-import { Box, styled } from '@mui/material'
-import { DataGrid } from '@mui/x-data-grid'
+import { Box } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+import React from "react";
 
-
-const DataTable = ({ loading, rows, getRowId, rowHeight, columns, getRowHeight, columnVisibilityModel, checkboxSelection, onRowSelectionModelChange }) => {
+const DataTable = ({
+  loading,
+  rows,
+  getRowId,
+  rowHeight,
+  columns,
+  getRowHeight,
+  columnVisibilityModel,
+  checkboxSelection,
+  onRowSelectionModelChange,
+}) => {
   return (
     <Box
-      maxWidth={{ xs: '90vw' }}
-      sx={{
-        // width: '100%',
-      }}
+      maxWidth={{ xs: "90vw" }}
+      sx={
+        {
+          // width: '100%',
+        }
+      }
     >
       <DataGrid
         // sx={{
@@ -19,14 +29,14 @@ const DataTable = ({ loading, rows, getRowId, rowHeight, columns, getRowHeight, 
         // }}
         sx={{
           boxShadow: 2,
-          minHeight: '650px',
+          minHeight: "650px",
           // '& .MuiDataGrid-columnHeader': {
           //   backgroundColor: 'lightgray',
           //   color: 'dark'
           // },
         }}
         localeText={{
-          noRowsLabel: 'Empty',
+          noRowsLabel: "Empty",
           footerRowSelected: (count) =>
             count !== 1
               ? `${count.toLocaleString()} Selected`
@@ -55,7 +65,7 @@ const DataTable = ({ loading, rows, getRowId, rowHeight, columns, getRowHeight, 
         disableColumnMenu
       />
     </Box>
-  )
-}
+  );
+};
 
-export default DataTable
+export default DataTable;

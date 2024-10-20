@@ -1,4 +1,4 @@
-@import '../../global.scss';
+@import "../../global.scss";
 
 .experience-title {
   @include container;
@@ -29,9 +29,9 @@
     height: 600px;
     background-color: $deep-gray;
     position: relative;
-    &::before{
+    &::before {
       position: absolute;
-      content: '';
+      content: "";
       width: 90%;
       height: 90%;
       border: 1px solid $dark-gray;
@@ -101,8 +101,6 @@
               height: 80px;
               font-size: 1.3rem;
             }
-            span {
-            }
           }
           .score-title {
             text-align: center;
@@ -122,6 +120,7 @@
     img {
       height: 100%;
       object-fit: cover;
+      max-width: 100%;
     }
   }
 }
