@@ -46,13 +46,7 @@ const BlogCard = ({ data }) => {
         <Stack>
           <Typography variant="body2">
             {data?.body && parse(data?.body.substring(0, 400))}{" "}
-            <span
-              style={{
-                color: "lightblue",
-              }}
-            >
-              Read More
-            </span>
+            <span className="blog-card-read-more">Read More</span>
           </Typography>
         </Stack>
       </Stack>

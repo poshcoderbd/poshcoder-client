@@ -51,7 +51,7 @@ const AboutPage = () => {
             }}
           >
             <img
-              style={{ width: "100%" }}
+              className="w-100"
               src="/company-about.png"
               alt="Professional Team"
             />

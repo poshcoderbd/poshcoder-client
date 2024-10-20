@@ -51,7 +51,7 @@ const Dashboard = () => {
         </Box>
         <Box sx={{ display: { xs: "none", md: "block" }, pt: 2 }} flex={1}>
           <img
-            style={{ width: "300px", height: "250px" }}
+            className="dashboard-inspiration-img"
             src="/about-img10.png"
             alt="Inspiration"
           />

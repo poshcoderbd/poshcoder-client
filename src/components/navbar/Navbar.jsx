@@ -38,11 +38,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div
-      ref={navbarRef}
-      className="navbar"
-      // style={{ transform: 'TranslateY(-100px)' }}
-    >
+    <div ref={navbarRef} className="navbar">
       <Link to="/" className="left link">
         <img src="/logo.png" alt="Posh Coder" />
       </Link>
@@ -50,15 +46,13 @@ const Navbar = () => {
         {/* <Slide> */}
         <Link
           to="/"
-          style={{ color: pathname === "/" ? "red" : "" }}
           onClick={() => setNav(false)}
-          className="link"
+          className={`link ${pathname === "/" ? "color-red" : ""}`}
         >
           Home
         </Link>
-        {/* <Link className='link' to='service' style={{ color: pathname === '/service' ? 'red' : '' }} onClick={() => setNav(false)}>Services</Link> */}
 
-        <div style={{ position: "relative" }}>
+        <div className="position-relative">
           <Button
             sx={{
               fontSize: "inherit",
@@ -100,9 +94,8 @@ const Navbar = () => {
               }}
             >
               <Link
-                className="link"
+                className="link pb-5 pl-5"
                 to="service"
-                style={{ paddingBottom: "5px", paddingLeft: "5px" }}
                 onClick={() => setNav(false)}
               >
                 <li onClick={() => setServiceMenu(!serviceMenu)}>
@@ -110,9 +103,8 @@ const Navbar = () => {
                 </li>
               </Link>
               <Link
-                className="link"
+                className="link pb-5"
                 to="service/webdev"
-                style={{ paddingBottom: "5px" }}
                 onClick={() => setNav(false)}
               >
                 <li onClick={() => setServiceMenu(!serviceMenu)}>
@@ -120,9 +112,8 @@ const Navbar = () => {
                 </li>
               </Link>
               <Link
-                className="link"
+                className="link pb-5"
                 to="service/appdevelop"
-                style={{ paddingBottom: "5px" }}
                 onClick={() => setNav(false)}
               >
                 <li onClick={() => setServiceMenu(!serviceMenu)}>
@@ -130,9 +121,8 @@ const Navbar = () => {
                 </li>
               </Link>
               <Link
-                className="link"
+                className="link pb-5"
                 to="service/graphic"
-                style={{ paddingBottom: "5px" }}
                 onClick={() => setNav(false)}
               >
                 <li onClick={() => setServiceMenu(!serviceMenu)}>
@@ -140,9 +130,8 @@ const Navbar = () => {
                 </li>
               </Link>
               <Link
-                className="link"
+                className="link pb-5"
                 to="service/marketing"
-                style={{ paddingBottom: "5px" }}
                 onClick={() => setNav(false)}
               >
                 <li onClick={() => setServiceMenu(!serviceMenu)}>
@@ -150,9 +139,8 @@ const Navbar = () => {
                 </li>
               </Link>
               <Link
-                className="link"
+                className="link pb-5"
                 to="service/content"
-                style={{ paddingBottom: "5px" }}
                 onClick={() => setNav(false)}
               >
                 <li onClick={() => setServiceMenu(!serviceMenu)}>
@@ -165,33 +153,29 @@ const Navbar = () => {
 
         <Link
           to="/about"
-          style={{ color: pathname === "/about" ? "red" : "" }}
-          className="link"
+          className={`link ${pathname === "/about" ? "color-red" : ""}`}
           onClick={() => setNav(false)}
         >
           About Us
         </Link>
         <Link
           to="/teams"
-          style={{ color: pathname === "/teams" ? "red" : "" }}
-          className="link"
+          className={`link ${pathname === "/teams" ? "color-red" : ""}`}
           onClick={() => setNav(false)}
         >
           Teams
         </Link>
         <Link
           to="/blog"
-          style={{ color: pathname === "/blog" ? "red" : "" }}
-          className="link"
+          className={`link ${pathname === "/blog" ? "color-red" : ""}`}
           onClick={() => setNav(false)}
         >
           Blog
         </Link>
         <Link
           to="/contact"
-          style={{ color: pathname === "/contact" ? "red" : "" }}
           onClick={() => setNav(false)}
-          className="link"
+          className={`link ${pathname === "/contact" ? "color-red" : ""}`}
         >
           Contact Us
         </Link>

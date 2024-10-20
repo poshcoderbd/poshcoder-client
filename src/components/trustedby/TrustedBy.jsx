@@ -29,10 +29,10 @@ const TrustedBy = () => {
         ) : (
           data.map((d, i) => (
             <img
-              style={{ marginRight: "30px" }}
+              className="mr-30"
               key={d._id}
               src={d.imgUrl}
-              alt={`Satisfied Client ${i}`}
+              alt={`Satisfied Client ${i + 1}`}
             />
           ))
         )}

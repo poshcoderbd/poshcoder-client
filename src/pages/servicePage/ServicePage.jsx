@@ -136,7 +136,7 @@ const ServicePage = () => {
         <Marquee autoFill gradient gradientColor={[0, 0, 0]}>
           {trustedby.map((data, ind) => (
             <img
-              style={{ marginRight: "30px" }}
+              className="satisfied-client-img"
               key={ind}
               src={data.img}
               alt={`Satisfied Client ${ind + 1}`}

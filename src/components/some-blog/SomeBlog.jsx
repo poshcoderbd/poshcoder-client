@@ -38,18 +38,7 @@ const SomeBlog = () => {
             .map((item) => <BlogCard key={item._id} data={item} />)
         )}
       </Stack>
-      <Link
-        to="/blog"
-        className="link"
-        style={{
-          marginTop: "15rem",
-          textAlign: "center",
-          border: "1px solid gray",
-          width: "200px",
-          padding: "5px 60px",
-          alignSelf: "center",
-        }}
-      >
+      <Link to="/blog" className="link all-blogs-btn">
         All Blogs
       </Link>
     </Container>

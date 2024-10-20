@@ -58,20 +58,18 @@ const Graphic = () => {
           </Link>
           <Link to="/service/marketing" className="link">
             <div
-              className="service-link"
-              style={{
-                backgroundColor: pathname === "/service/marketing" ? "red" : "",
-              }}
+              className={`service-link ${
+                pathname === "/service/marketing" ? "bg-red" : ""
+              }`}
             >
               <span>Digital Marketing</span>
               <ArrowRightAltOutlined />
             </div>
           </Link>
           <div
-            className="service-link"
-            style={{
-              backgroundColor: pathname === "/service/graphic" ? "red" : "",
-            }}
+            className={`service-link ${
+              pathname === "/service/graphic" ? "bg-red" : ""
+            }`}
           >
             <span>Graphic Designing</span>
             <ArrowRightAltOutlined />

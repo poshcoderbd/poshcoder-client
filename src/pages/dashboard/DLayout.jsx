@@ -156,7 +156,7 @@ export default function DLayout(props) {
               width: { xs: "150px", md: "180px" },
             }}
           >
-            <img style={{ width: "100%" }} src="/logo.png" alt="Posh Coder" />
+            <img className="w-100" src="/logo.png" alt="Posh Coder" />
           </Box>
         </Link>
       </Toolbar>

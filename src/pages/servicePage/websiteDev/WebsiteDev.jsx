@@ -48,10 +48,9 @@ const WebsiteDev = () => {
       <div className="web-dev-middle">
         <div className="left">
           <div
-            className="service-link"
-            style={{
-              backgroundColor: pathname === "/service/webdev" ? "red" : "",
-            }}
+            className={`service-link ${
+              pathname === "/service/webdev" ? "bg-red" : ""
+            }`}
           >
             <span>Website Development</span>
             <ArrowRightAltOutlined />
@@ -338,18 +337,7 @@ const WebsiteDev = () => {
           <BlogCard />
           <BlogCard />
         </Stack>
-        <Link
-          to="/blog"
-          className="link"
-          style={{
-            marginTop: "5rem",
-            textAlign: "center",
-            border: "1px solid gray",
-            width: "200px",
-            padding: "5px 10px",
-            alignSelf: "center",
-          }}
-        >
+        <Link to="/blog" className="link all-blogs-btn mt-4">
           All Blogs
         </Link>
       </Stack>

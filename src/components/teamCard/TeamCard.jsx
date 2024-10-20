@@ -11,11 +11,7 @@ const TeamCard = ({ data }) => {
           width: { xs: "100%", md: "350px" },
         }}
       >
-        <img
-          style={{ width: "100%", height: "100%" }}
-          src={data?.imgUrl}
-          alt={data?.name}
-        />
+        <img className="w-100 h-100" src={data?.imgUrl} alt={data?.name} />
       </Box>
       <div className="card-bottom">
         <span>{data?.title}</span>
